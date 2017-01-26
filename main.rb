@@ -5,7 +5,7 @@ now = Time.now
 TARGET = 8000
 
 # binding.pry
-@doc = Nokogiri::XML(File.open(ARGV[0]))
+@doc   = Nokogiri::XML(File.open(ARGV[0]))
 
 all_coordinates_str = @doc.search("coordinates").children.to_s
 
