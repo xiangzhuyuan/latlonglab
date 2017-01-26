@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.opengis.net/kml/2.2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="kml" type="ns:kmlType" xmlns:ns="http://www.opengis.net/kml/2.2"/>
+  <xs:complexType name="StyleType">
+    <xs:sequence>
+      <xs:element type="ns:LineStyleType" name="LineStyle" xmlns:ns="http://www.opengis.net/kml/2.2"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+  </xs:complexType>
+  <xs:complexType name="kmlType">
+    <xs:sequence>
+      <xs:element type="ns:DocumentType" name="Document" xmlns:ns="http://www.opengis.net/kml/2.2"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LineStringType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="extrude"/>
+      <xs:element type="xs:string" name="tessellate"/>
+      <xs:element type="xs:string" name="altitudeMode"/>
+      <xs:element type="xs:string" name="coordinates"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PlacemarkType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="description"/>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:string" name="visibility"/>
+      <xs:element type="xs:string" name="flyToView"/>
+      <xs:element type="xs:string" name="styleUrl"/>
+      <xs:element type="ns:LineStringType" name="LineString" xmlns:ns="http://www.opengis.net/kml/2.2"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LineStyleType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="color"/>
+      <xs:element type="xs:string" name="width"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DocumentType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="description"/>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="ns:StyleType" name="Style" xmlns:ns="http://www.opengis.net/kml/2.2"/>
+      <xs:element type="ns:PlacemarkType" name="Placemark" xmlns:ns="http://www.opengis.net/kml/2.2"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
