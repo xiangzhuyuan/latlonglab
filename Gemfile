@@ -10,3 +10,6 @@ group :development do
   gem 'pry'
 
 end
+
+gem 'fit-parser'
+gem 'byebug'
